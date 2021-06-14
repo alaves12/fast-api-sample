@@ -12,7 +12,7 @@ class ImageParam(BaseModel):
 
 @app.post("/files/")
 def create_file(file: UploadFile = File(...)):
-    service_name = "sample-fastapi-2"
+    service_name = "sample-fastapi"
     bucket_name = service_name + "-resources-sls-imgageup-uploadimages"
     target_name = os.path.basename(file.filename)
     s3 = boto3.resource('s3')
