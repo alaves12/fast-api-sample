@@ -49,7 +49,7 @@ docker-compose run --rm app yarn run deploy -s prod
 ### ローカルでのテスト
 
 ```bash
-    docker-compose up -d
+docker-compose up -d
 ```
 
 ```bash
