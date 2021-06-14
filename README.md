@@ -1,1 +1,50 @@
-# fast-api-sample
+# AWS Lambda for FastAPI
+
+## 課題
+
+pythonのfastapiを使い、postした画像をAWSのs3に保存し、保存先のurlをreturnするAPIをlambdaのfunctionとして書く。
+
+
+## セットアップ
+
+1. クレデンシャル情報を設置
+
+    ```bash
+    cp -a .env.example .env
+    vim .env
+
+    以下を書き換えます
+    AWS_ACCESS_KEY_ID=XXXXXXXXXXXXXXXXXXXX
+    AWS_SECRET_ACCESS_KEY=YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+    ```
+
+2. Dockerイメージの作成
+
+    ```bash
+    docker-compose build
+    ```
+
+3. パッケージのインストール
+
+    ```bash
+    docker-compose run --rm app yarn install
+    ```
+
+## デプロイ
+
+### ステージング環境
+
+```bash
+docker-compose run --rm app yarn run deploy -s dev
+```
+
+### 本番環境
+
+```bash
+docker-compose run --rm app yarn run deploy -s prod
+```
+
+
+## ライセンス
+
+[MIT license](https://en.wikipedia.org/wiki/MIT_License).

@@ -6,4 +6,3 @@ apps/app/.serverless
 __pycache__
 apps/app/node_modules
 apps/app/yarn.lock
-apps/*.jpg
