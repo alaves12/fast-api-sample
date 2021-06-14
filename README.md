@@ -79,7 +79,10 @@ curl -X POST "エンドポイントURL/files/" -H  "accept: application/json" -H
 ローカルで画像をPOSTした際はリターンされたurlから画像をダウンロードし表示することができた。
 しかしデプロイ後 apigatewayのエンドポイントにPOSTした際は、urlは一応リターンされダウンロードもできたが画像が表示されなかった。
 
-
 ## ライセンス
 
 [MIT license](https://en.wikipedia.org/wiki/MIT_License).
+
+## 参考
+
+https://github.com/acronhub/sls-python3-fastapi
