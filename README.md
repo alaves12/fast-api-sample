@@ -13,18 +13,32 @@ pythonのfastapiを使い、postした画像をAWSのs3に保存し、保存先�
     cp -a .env.example .env
     vim .env
 
-    以下を書き換えます
+    以下を書き換える
     AWS_ACCESS_KEY_ID=XXXXXXXXXXXXXXXXXXXX
     AWS_SECRET_ACCESS_KEY=YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
     ```
+2. サービス名を書き換える
 
-2. Dockerイメージの作成
+    ```bash
+    vim apps/app/serverless.yml 
+
+    service: サービス名
+    ```
+
+    ```bash
+    vim apps/app/main.py
+    
+    def create_file(file: UploadFile = File(...)):
+      service_name = サービス名 
+    ```
+
+3. Dockerイメージの作成
 
     ```bash
     docker-compose build
     ```
 
-3. パッケージのインストール
+4. パッケージのインストール
 
     ```bash
     docker-compose run --rm app yarn install
@@ -58,7 +72,7 @@ curl -X POST "localhost:8000/files/" -H  "accept: application/json" -H  "Content
 
 ### 本番環境でのテスト
 ```bash
-curl -X POST "{EndPointURL}/prod/files/" -H  "accept: application/json" -H  "Content-Type: multipart/form-data" -F "file=@img1.jpg;type=image/jpeg"
+curl -X POST "エンドポイントURL/files/" -H  "accept: application/json" -H  "Content-Type: multipart/form-data" -F "file=@img1.jpg;type=image/jpeg"
 ```
 
 ## 結果
