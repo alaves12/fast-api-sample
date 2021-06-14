@@ -58,7 +58,7 @@ curl -X POST "localhost:8000/files/" -H  "accept: application/json" -H  "Content
 
 ### 本番環境でのテスト
 ```bash
-curl -X POST "endpoint/prod/files/" -H  "accept: application/json" -H  "Content-Type: multipart/form-data" -F "file=@img1.jpg;type=image/jpeg"
+curl -X POST "{EndPointURL}/prod/files/" -H  "accept: application/json" -H  "Content-Type: multipart/form-data" -F "file=@img1.jpg;type=image/jpeg"
 ```
 
 ## 結果
