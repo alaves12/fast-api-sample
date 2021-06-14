@@ -44,6 +44,26 @@ docker-compose run --rm app yarn run deploy -s dev
 docker-compose run --rm app yarn run deploy -s prod
 ```
 
+## 確認方法
+
+### ローカルでのテスト
+
+```bash
+    docker-compose up -d
+```
+
+```bash
+curl -X POST "localhost:8000/files/" -H  "accept: application/json" -H  "Content-Type: multipart/form-data" -F "file=@img1.jpg;type=image/jpeg"
+```
+
+### 本番環境でのテスト
+```bash
+curl -X POST "endpoint/prod/files/" -H  "accept: application/json" -H  "Content-Type: multipart/form-data" -F "file=@img1.jpg;type=image/jpeg"
+```
+
+## 結果
+ローカルで画像をPOSTした際はリターンされたurlから画像をダウンロードし表示することができたが、デプロイ後 apigatewayのエンドポイントにPOSTした際は、一応urlはリターンされダウンロードもできたが画像が表示されなかった。
+
 
 ## ライセンス
 
