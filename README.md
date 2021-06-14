@@ -62,7 +62,8 @@ curl -X POST "{EndPointURL}/prod/files/" -H  "accept: application/json" -H  "Con
 ```
 
 ## 結果
-ローカルで画像をPOSTした際はリターンされたurlから画像をダウンロードし表示することができたが、デプロイ後 apigatewayのエンドポイントにPOSTした際は、一応urlはリターンされダウンロードもできたが画像が表示されなかった。
+ローカルで画像をPOSTした際はリターンされたurlから画像をダウンロードし表示することができた。
+しかしデプロイ後 apigatewayのエンドポイントにPOSTした際は、urlは一応リターンされダウンロードもできたが画像が表示されなかった。
 
 
 ## ライセンス
